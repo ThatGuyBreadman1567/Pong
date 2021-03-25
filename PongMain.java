@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Insets;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -194,5 +195,14 @@ public class PongMain extends JFrame implements ActionListener
 		ball.update();
 		
 		repaint();
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		Graphics2D g2 = (Graphics2D) g;
+		g2.setColor(Color.GREEN);
+		g2.fill(new Rectangle(25,25,100,100));
+		
+		paint(g2);
 	}
 }
