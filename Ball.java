@@ -45,4 +45,10 @@ public class Ball extends JComponent
 		g2.setColor(Color.WHITE);
 		g2.fill(circle);
 	}
+	public void reset(int x, int y)
+	{
+		setLocation(x,y);
+		dx=0;
+		dy=0;
+	}
 }
