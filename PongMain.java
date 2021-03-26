@@ -28,6 +28,7 @@ public class PongMain extends JFrame implements ActionListener
 	private Insets inset;
 	private int score1, score2, lastScored;
 	private JLabel lbl1,lbl2;
+	private DottedLine line;
 	
 	public PongMain()
 	{
@@ -59,6 +60,9 @@ public class PongMain extends JFrame implements ActionListener
 		
 		inset = getInsets();
 		inset.set(0, 0, 500, 700);
+		
+		line = new DottedLine();
+		add(line);
 		
 		Timer t1 = new Timer(10,this);
 		t1.start();
@@ -197,12 +201,4 @@ public class PongMain extends JFrame implements ActionListener
 		repaint();
 	}
 	
-	public void paintComponent(Graphics g)
-	{
-		Graphics2D g2 = (Graphics2D) g;
-		g2.setColor(Color.GREEN);
-		g2.fill(new Rectangle(25,25,100,100));
-		
-		paint(g2);
-	}
 }
